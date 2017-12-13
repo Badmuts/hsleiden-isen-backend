@@ -1,0 +1,11 @@
+Host isen
+  Hostname isen.daan.codes
+  IdentityFile operations/secrets/isen
+  User isen
+  IdentitiesOnly yes
+  StrictHostKeyChecking no
+
+# This will allow us to use port 8080 on the local machine
+# in order to access example.com at port 80 from the remote machine
+# Host local_to_remote
+#    LocalForward 8080 example.com:80

@@ -14,6 +14,7 @@
     "ttn": "^2.3.0-alpha.3"
   },
   "scripts": {
-    "start": "pm2-dev src/index.js"
+    "start": "pm2-docker src/index.js",
+    "dev": "pm2-dev src/index.js"
   }
 }

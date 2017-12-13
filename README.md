@@ -20,3 +20,12 @@ $ logs
 $ yarn 
 $ npm
 ```
+
+## Deployment
+
+```sh
+# To build current dir with package.json version
+$ build
+# To deploy current version read from package.json (version must be an image available on hub.docker.com)
+$ deploy
+```

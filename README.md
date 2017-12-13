@@ -3,7 +3,8 @@
 ## Getting started
 
 ```sh
+# Create and fill .env
 $ cp .env.example .env
-$ yarn
-$ yarn start
+# Start developing
+$ docker-compose up -d
 ```

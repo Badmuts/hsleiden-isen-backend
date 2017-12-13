@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+alias yarn="docker-compose exec app yarn"
+alias npm="docker-compose exec app npm"
+alias logs="docker-compose logs -f app"

@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  app:
+    image: badmuts/isen:${VERSION}
+    restart: unless-stopped
+    expose:
+      - "1337"
+    networks:
+      - web
+      - default
+    env_file: .env
+    depends_on:
+      - mysql
+    labels:
+      - "traefik.backend=isen-backend"
+      - "traefik.docker.network=web"
+      - "traefik.frontend.rule=Host:backend.isen.daan.codes"
+      - "traefik.enable=true"
+      - "traefik.port=1337"
+
+  mysql:
+    image: mysql:5.7
+    restart: unless-stopped
+    networks:
+      - default
+    environment:
+      - MYSQL_RANDOM_ROOT_PASSWORD=true
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    volumes:
+      - "~/mysql:/var/lib/mysql"
+
+networks:
+  web:
+    external: true

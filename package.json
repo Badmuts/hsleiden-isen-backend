@@ -1,0 +1,15 @@
+{
+  "name": "hsleiden-isen-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Daan Rosbergen <d.rosbergen@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "express": "^4.16.2",
+    "ttn": "^2.3.0-alpha.3"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}

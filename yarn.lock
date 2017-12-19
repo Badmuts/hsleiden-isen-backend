@@ -2437,9 +2437,9 @@ ttn@^2.3.0-alpha.3:
     source-map-support "^0.4.17"
     ttnapi "https://github.com/thethingsnetwork/api"
 
-"ttnapi@https://github.com/thethingsnetwork/api":
+"ttnapi@git+https://github.com/thethingsnetwork/api.git":
   version "2.0.0"
-  resolved "https://github.com/thethingsnetwork/api#0b96092b1747563bff5322c8fab06f9b9acfbbc7"
+  resolved "git+https://github.com/thethingsnetwork/api.git#0b96092b1747563bff5322c8fab06f9b9acfbbc7"
   dependencies:
     google-protobuf "^3.3.0"
     grpc "^1.4.1"

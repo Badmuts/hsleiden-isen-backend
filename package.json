@@ -12,6 +12,7 @@
     "mysql2": "^1.5.1",
     "pm2": "^2.8.0",
     "sequelize": "^4.28.1",
+    "sequelize-cli": "^3.2.0",
     "ttn": "^2.3.0-alpha.3"
   },
   "scripts": {

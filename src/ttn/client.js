@@ -1,11 +1,9 @@
 const { data, application } = require("ttn");
-const { _ } = require('lodash');
+const _ = require('lodash');
+const { Device, BoatsPassed, BridgeOpenings } = require('../db');
+
 const appID = process.env.TTN_APP_ID;
 const accessKey = process.env.TTN_ACCESS_KEY;
-var models = require('../../models');
-var Device = models.Device;
-var BoatsPassed = models.BoatsPassed;
-var BridgeOpenings = models.BridgeOpenings;
 
 const connect = () => {
   // discover handler and open mqtt connection

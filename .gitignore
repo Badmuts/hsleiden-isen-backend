@@ -3,3 +3,5 @@ node_modules/
 .env.production
 operations/secrets
 operations/secrets.tar.gz
+yarn-error.log
+npm-error.log

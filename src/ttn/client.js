@@ -42,13 +42,14 @@ const connect = () => {
             console.log("Device bestaat al. dus niet opnieuw opslaan!");
           }
         });
+        var passed = new Date();
           // Loop through al passes boats and persist data to DB
         _.forEach(boatsPassed, function(boat) {
             BoatsPassed.create(
               { 
                 device_id: payload.dev_id, 
                 from: Date.now(), 
-                to: Date.now(),
+                to: new Date(passed.getTime() + (1000 * boat)),
               }).then(boatpassing => {
                   // Prints the persisted object in the log
                   console.log(boatpassing.get({
@@ -58,13 +59,14 @@ const connect = () => {
               console.log("Error: ", error);
             });
         });
+        var opened = new Date();
         // Loop through al bridge openings and persist data to DB
-        _.forEach(bridgeOpened, function(boat) {
+        _.forEach(bridgeOpened, function(bridge) {
           BridgeOpenings.create(
             { 
               device_id: payload.dev_id, 
               from: Date.now(), 
-              to: Date.now(),
+              to: new Date(opened.getTime() + (1000 * bridge)),
             }).then(bridgeOpening => {
                 // Prints the persisted object in the log
                 console.log(bridgeOpening.get({

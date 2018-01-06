@@ -63,7 +63,7 @@ Options:
 * Navigate to `http://localhost:4000`
 * Login with `admin:admin`
 * Add datasource MySQL
-* Use `db:33066` as address
+* Use `db:3306` as address
 * Username: whetever you picked in the env file
 * Password whetever you picked in the env file
 * Database: whetever you picked in the env file

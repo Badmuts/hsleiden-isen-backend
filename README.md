@@ -58,7 +58,7 @@ Options:
   --help     Show help                                                   [boolean]
 ```
 
-**Configure Grafana**
+## Database
 
 * Navigate to `http://localhost:4000`
 * Login with `admin:admin`

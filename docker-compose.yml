@@ -17,11 +17,11 @@ services:
       - "3306"
     environment:
       - MYSQL_RANDOM_ROOT_PASSWORD=true
-      - MYSQL_DATABASE=kaas
-      - MYSQL_USER=kaas
-      - MYSQL_PASSWORD=kaas
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
 
   dashboard:
      image: grafana/grafana
      ports:
-       - "4000:3000" 
+       - "4000:3000"     

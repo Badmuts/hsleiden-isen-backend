@@ -20,3 +20,8 @@ services:
       - MYSQL_DATABASE=${MYSQL_DATABASE}
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+
+  dashboard:
+     image: grafana/grafana
+     ports:
+       - "4000:3000"     

@@ -8,7 +8,8 @@ RUN apk --update add git \
 
 WORKDIR /usr/src/app
 
-COPY package.json yarn.lock /usr/src/app/
+COPY package.json yarn.lock .sequelizerc /usr/src/app/
+COPY db /usr/src/app/db
 RUN yarn
 
 COPY src/ /usr/src/app/src

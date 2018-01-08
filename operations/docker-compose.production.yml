@@ -11,7 +11,7 @@ services:
       - default
     env_file: .env
     depends_on:
-      - mysql
+      - db
     labels:
       - "traefik.backend=isen-backend"
       - "traefik.docker.network=web"
@@ -19,7 +19,7 @@ services:
       - "traefik.enable=true"
       - "traefik.port=1337"
 
-  mysql:
+  db:
     image: mysql:5.7
     restart: unless-stopped
     networks:
@@ -31,6 +31,22 @@ services:
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
     volumes:
       - "~/mysql:/var/lib/mysql"
+
+  dashboard:
+    image: grafana/grafana
+    restart: unless-stopped
+    networks:
+      - default
+    expose:
+      - "3000"
+    volumes:
+      - "~/grafana:/var/lib/grafana"
+    labels:
+      - "traefik.backend=isen-backend-dashboard"
+      - "traefik.docker.network=web"
+      - "traefik.frontend.rule=Host:isen.daan.codes,dashboard.isen.daan.codes"
+      - "traefik.enable=true"
+      - "traefik.port=3000"
 
 networks:
   web:

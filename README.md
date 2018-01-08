@@ -65,6 +65,19 @@ Options:
   --help     Show help                                                   [boolean]
 ```
 
+## Grafana
+
+* Navigate to `http://localhost:4000`
+* Login with `admin:admin`
+* Add datasource MySQL
+* Use `db:3306` as address
+* Username: whetever you picked in the env file
+* Password whetever you picked in the env file
+* Database: whetever you picked in the env file
+
+Click on top of the webpage next to the grafana logo on home. 
+Press import dashboard and select the json file which is located in the grafana folder
+
 ## Deployment
 
 ```sh

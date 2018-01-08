@@ -25,6 +25,13 @@ $ sequelize
 $ db
 ```
 
+**Test payload**
+This payload can be used with the simulate uplink feature of TTN
+
+```
+3336303020333230303b323130302032333030
+```
+
 ## Database
 
 Connection to the database is handled by [Sequelize](http://docs.sequelizejs.com/). The [`sequelize-cli`](https://github.com/sequelize/cli) package is also installed:

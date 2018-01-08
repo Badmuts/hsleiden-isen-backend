@@ -7,7 +7,7 @@ services:
       - ".:/usr/src/app"
       - "./src:/usr/src/app/src"
     ports:
-      - "1337:1337"
+      - "${PORT}:1337"
     env_file: .env
     command: yarn dev
 

@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     from: DataTypes.DATE,
     to: DataTypes.DATE
   }, {
+    tableName: "BoatsPassed",
     classMethods: {
       associate: function(models) {
         models.BoatsPassed.belongsTo(models.Device, {

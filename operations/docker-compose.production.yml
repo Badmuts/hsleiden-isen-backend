@@ -39,10 +39,12 @@ services:
       - default
     expose:
       - "3000"
+    ports:
+      - "3000"
     volumes:
       - "~/grafana:/var/lib/grafana"
     labels:
-      - "traefik.backend=isen-backend-dashboard"
+      - "traefik.backend=isen-dashboard"
       - "traefik.docker.network=web"
       - "traefik.frontend.rule=Host:isen.daan.codes,dashboard.isen.daan.codes"
       - "traefik.enable=true"

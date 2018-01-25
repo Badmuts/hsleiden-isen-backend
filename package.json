@@ -1,6 +1,6 @@
 {
   "name": "hsleiden-isen-backend",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "index.js",
   "author": "Daan Rosbergen <d.rosbergen@gmail.com>",
   "license": "MIT",

@@ -9,7 +9,7 @@ module.exports = {
         const dbBoatsPassed = boatPassed.map(timeOfPassing => BoatsPassed.create({ 
             device_id: payload.dev_id, 
             from: Date.now(), 
-            to: new Date(passed.getTime() + (1000 * timeOfPassing)),
+            to: new Date(passed.getTime() - (1000 * timeOfPassing)),
         }))
 
         return Promise.all(dbBoatsPassed);

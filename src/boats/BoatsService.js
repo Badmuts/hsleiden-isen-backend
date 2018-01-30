@@ -1,17 +1,33 @@
 const { BoatsPassed } = require('../db');
 const Promise = require('bluebird');
+const moment = require('moment');
 
-module.exports = {
-    registerPassings: payload => {
+const BoatsService = {
+    payloadToTimestamps: payload => {
         const { boatPassed } = payload.payload_fields;
-        const passed = new Date();
+
+        return boatPassed.reduce((result, value, index, array) => {
+            if (index % 2 === 0)
+                result.push(array.slice(index, index + 2));
+            return result
+        }, [])
+        .map(value => {
+            const now = moment(payload.time);
+            return value.map(time => moment(now).subtract(time, 'seconds'))
+        });
+    },
+    
+    registerPassings: payload => {
+        const boatPassed = BoatsService.payloadToTimestamps(payload);
 
         const dbBoatsPassed = boatPassed.map(timeOfPassing => BoatsPassed.create({ 
             device_id: payload.dev_id, 
-            from: Date.now(), 
-            to: new Date(passed.getTime() - (1000 * timeOfPassing)),
+            from: timeOfPassing[0], 
+            to: timeOfPassing[1],
         }))
 
         return Promise.all(dbBoatsPassed);
     }
 }
+
+module.exports = BoatsService;

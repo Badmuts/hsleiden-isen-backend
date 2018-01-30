@@ -11,6 +11,8 @@ const connect = () => {
   data(appID, accessKey)
     .then(function(client) {
       client.on("uplink", function(devID, payload) {
+        console.log('PAYLOAD', payload)
+
         DeviceService.findOrCreate(payload)
           .spread((device, created) => console.log(device.get({ plain: true })))
           .catch(err => console.error('Could not save Device', err.message))

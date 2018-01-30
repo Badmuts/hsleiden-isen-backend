@@ -1,5 +1,4 @@
 version: '3'
-
 services:
   app:
     image: badmuts/isen:${VERSION}
@@ -22,6 +21,8 @@ services:
   db:
     image: mysql:5.7
     restart: unless-stopped
+    ports:
+      - "3306:3306"
     networks:
       - default
     environment:
